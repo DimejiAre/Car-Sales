@@ -24,6 +24,10 @@ export function carReducer(state = initialCarData, action){
             return {
                 ...state, features: state.features.concat(action.payload)
             };
+        case types.REMOVE_FEATURE:
+            return {
+                ...state, features: state.features.filter(item => item.id !== action.payload)
+            }
         default:
             return state;
     }
