@@ -21,7 +21,9 @@ const initialAddPrice = 0
 export function carReducer(state = initialCarData, action){
     switch(action.type){
         case types.ADD_FEATURE:
-            return [];
+            return {
+                ...state, features: state.features.concat(action.payload)
+            };
         default:
             return state;
     }
